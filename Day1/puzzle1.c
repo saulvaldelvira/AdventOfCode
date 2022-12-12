@@ -5,8 +5,8 @@
 #define MAX_BUFFER_SIZE 1024
 
 int main(){
-    FILE* file;
-    if(file = fopen(FILENAME, "r")==NULL){
+    FILE* file = fopen(FILENAME, "r");
+    if(!file){
         fprintf(stderr, "Error: could not find filename %s\n", FILENAME);
         return -1;
     }
@@ -29,12 +29,14 @@ int main(){
                         nCurrentCalories = 0;
                     }
                 }
-                nBufferPointer=0;
-            }  
+            }else{
+             nCurrentCalories += atoi(line);
+            }
+           nBufferPointer=0;
         }else{
             line[nBufferPointer++] = c;
             if(nBufferPointer>=MAX_BUFFER_SIZE){
-                fprintf(stderr, "Error: The buffer overflows, set the MAX_BUFFER_SIZE to a higher value and try again\n", FILENAME);
+                fprintf(stderr, "Error: The buffer overflows, set the MAX_BUFFER_SIZE to a higher value and try again\n");
             }
         }
     }
