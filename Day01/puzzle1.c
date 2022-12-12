@@ -81,5 +81,6 @@ int main(){
     
     printf("\nThe top %d elfs carry a total of %d calories\n", NUMBER_TOP_RANKING, nCurrentCalories);
 
+    fclose(file);
     return 1;
 }

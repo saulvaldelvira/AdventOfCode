@@ -54,5 +54,7 @@ int main(){
     }
     match();
 
+    fclose(file);
+
     printf("The player got %d total points\n", nScore);
 }
