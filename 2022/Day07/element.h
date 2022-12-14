@@ -20,9 +20,6 @@ typedef struct sElement{
     int     size;
     struct sElement* subElements[MAX_BUFFER_SIZE];
     struct sElement* father;
-    /*The names of this element's sub-elements, used to search them. 
-        If subNames[2] == "foo" the subElements[2] will be the correspondig element with name "foo"*/
-    char    subNames[MAX_BUFFER_SIZE][MAX_BUFFER_SIZE]; 
     int     nSubElements;
 } Element;
 
@@ -45,9 +42,10 @@ void addSubElement(Element* root, Element* e, const char* name, Type type, int s
 void freeElement(Element* e);
 
 /**
- * @brief Changes the working directory to the one given as name
+ * @brief   returns the pointer to the sub-element with the specified name.
+ *          If it can't fine it, returns null
  */
-Element* changeDir(Element* e, char name[]);
+Element* getSubElement(Element* e, const char* name);
 
 /**
  * @brief Prints the whole tree

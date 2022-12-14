@@ -128,7 +128,7 @@ void processCommand(){
         if(strcmp(arg, "..")==0)
             working = working->father;
         else
-            working = changeDir(working, arg);
+            working = getSubElement(working, arg);
 
 
     }
@@ -169,7 +169,6 @@ int main(){
     working = innitElement();
     working->subElements[0] = root;
     working->nSubElements++;
-    strcpy(working->subNames[0], "/");
 
 
     buffer.valid = 0;
@@ -181,6 +180,7 @@ int main(){
         processCommand();
     }
 
+    printf("\nTREE:\n");
     printTree(root);
 
 

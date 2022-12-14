@@ -2,13 +2,11 @@
 
 Element* innitElement(void){
     #if DEBUG
-    //printf("\tAllocating memory...\n");
+    printf("\tAllocating memory...\n");
     #endif
     Element* e = malloc(sizeof(Element));
-    for(int i=0; i<MAX_BUFFER_SIZE; i++){
-        e->subElements[i] = NULL; 
-        strcpy(e->subNames[i], " ");
-    }
+    for(int i=0; i<MAX_BUFFER_SIZE; i++)
+        e->subElements[i] = NULL;
         
     e->nSubElements = 0;
     return e;
@@ -16,10 +14,10 @@ Element* innitElement(void){
 
 void addSubElement(Element* root, Element* e, const char* name, Type type, int size){
     #if DEBUG
-    //printf("Inniting element\n");
+    printf("Inniting element (%s)\n", name);
     #endif
     e->subElements[e->nSubElements] = innitElement();
-
+    
     Element* aux = e->subElements[e->nSubElements];
 
     aux->type = type;
@@ -27,13 +25,12 @@ void addSubElement(Element* root, Element* e, const char* name, Type type, int s
     aux->size = size;
     aux->father = e;
     
-    strcpy(e->subNames[e->nSubElements], name);
     e->nSubElements++;
 
     getSize(root);
 
     #if DEBUG 
-    //printf("Finish!\n");
+    printf("Finish!\n");
     #endif
 }
 
@@ -46,16 +43,6 @@ void freeElement(Element* e){
             e->subElements[i] = NULL;
         }
     free(e);
-}
-
-Element* changeDir(Element* e, char name[]){
-    for(int i=0; i<e->nSubElements; i++){
-        if(strcmp(e->subNames[i], name)==0){
-            return e->subElements[i];
-        }
-            
-    }
-    return NULL;
 }
 
 static void printTreeR(Element* e, int nDeepness){
@@ -92,4 +79,11 @@ Element* findSmallestOver(Element* smallest, int nSize){
             result = aux;
     }
     return result;
+}
+
+Element* getSubElement(Element* e, const char* name){
+    for(int i=0; i<e->nSubElements; i++)
+        if(e->subElements[i]!=NULL && strcmp(e->subElements[i]->name, name)==0)
+            return e->subElements[i];
+    return NULL; 
 }
