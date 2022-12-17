@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define FILENAME "input.txt"
+#define FILENAME "test.txt"
 #define MATRIX_SIZE 100
 
 int is_visible(int x, int y, int matrix[MATRIX_SIZE][MATRIX_SIZE], int row, int col){
