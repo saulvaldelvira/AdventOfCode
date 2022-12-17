@@ -9,6 +9,10 @@
 
 ### Above combination will ignore all files without extension ###
 
+.*.swo
+.*.swp
+
+
 # Prerequisites
 *.d
 
