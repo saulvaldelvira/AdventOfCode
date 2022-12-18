@@ -40,5 +40,5 @@ while worry > cycle_length:
 
 and you know you haven't affected any of the divisibility tests.
 
-Modulo worry = worry % cycle_length is just turning the loop above into a single operation. It's prettier, but it's the same thing.
+Modulo (worry = worry % cycle_length) is just turning the loop above into a single operation. It's prettier, but it's the same thing.
 ```
