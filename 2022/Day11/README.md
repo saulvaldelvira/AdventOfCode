@@ -33,7 +33,7 @@ Sho nuff, the cycle is 15.
 
 Now for certain pairs of numbers, the pattern will be shorter than the product of the numbers -- e.g. for 2 and 4, the pattern is 4 long, not 8 -- but the shorter pattern always fits evenly into the product, so using the product still works. So there's a lot of stuff you can uncover (https://en.wikipedia.org/wiki/Coprime_integers) but you don't need it to get the right answer.
 
-So at this point, you can solve the problem without using modulo at all -- get the cycle length for all 8 monkeys combined (the product of their divisors), then you could do something ghetto like
+So at this point, you can solve the problem without using modulo at all -- get the cycle length for all 8 monkeys combined (the product of their divisors), then you could do something like
 
 while worry > cycle_length:
     worry -= cycle_length
