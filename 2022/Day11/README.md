@@ -1,4 +1,4 @@
-This puzzle is a little bit tricky and uses modular algebra. <br>
+This puzzle is a little bit tricky. <br>
 Here bellow is an explanation from <a href="https://www.reddit.com/r/adventofcode/comments/zizi43/2022_day_11_part_2_learning_that_it_was_that/" target="_blank">u/MattieShoes</a> on Reddit. <br>
 
 ```
