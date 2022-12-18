@@ -1,6 +1,7 @@
 This puzzle is a little bit tricky and uses modular algebra. <br>
 Here bellow is an explanation from <a href="https://www.reddit.com/user/MattieShoes/">u/MattieShoes</a> on Reddit. <br>
 
+'''
 There's different levels of understanding, but... We can start from easy.
 
 If we're testing for divisibility by 2
@@ -40,4 +41,4 @@ while worry > cycle_length:
 and you know you haven't affected any of the divisibility tests.
 
 Modulo worry = worry % cycle_length is just turning the loop above into a single operation. It's prettier, but it's the same thing.
-
+'''
