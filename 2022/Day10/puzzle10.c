@@ -98,28 +98,28 @@ int main(){
                 if(crtY!=MAX_CRT_Y){ //if we reached the end of the 6th line, stop printing
                     if(crtX == rX || crtX == (rX-1) || crtX == (rX+1)){
                         CRT[crtY][crtX] = '#';
-                        #if DEBUG
+#if DEBUG
                         printf("\tsprite coincidence\n");
-                        #endif
+#endif
                     }else{
                         CRT[crtY][crtX] = '.';
                     }
                     crtX++;
 
-                    #if DEBUG
+#if DEBUG
                     printf("(clock %d) CRT_Line_%d: ",clock, crtY);
                     for(int i=0; i<MAX_CRT_X; i++)
                         printf("%c", CRT[crtY][i]);
                     printf("\n");
-                    #endif
+#endif
                 }
             }
             
 
         }
-        #if DEBUG
+#if DEBUG
         printf("Exit in cycle %d || rX: %d\n\n", clock, rX);
-        #endif
+#endif
     }
 
     printf("The signal strenght is %d\n", signal_strenght);
