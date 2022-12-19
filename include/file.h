@@ -4,7 +4,9 @@
 #include <stdio.h>
 #define MAX_BUFFER_SIZE 1024
 
-//#define DEBUG 1
+#ifndef DEBUG
+    #define DEBUG 1
+#endif
 
 int fgetline(char dest[], FILE* f,  int max){
     int c, nBuffer=0;

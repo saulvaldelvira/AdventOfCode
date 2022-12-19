@@ -1,0 +1,1 @@
+Header files with some common functions like string parsing,  structure definitions like Coordinates, or constants like MAX_BUFFER_SIZE

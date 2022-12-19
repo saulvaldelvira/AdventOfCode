@@ -1,12 +1,8 @@
-#include "file.h"
+#define DEBUG 0
+#include "../../include/util.h"
 #include <string.h>
 #include <stdlib.h>
-#define DEBUG 0
-#if DEBUG
-    #define FILENAME "test.txt"
-#else
-    #define FILENAME "input.txt"
-#endif
+
 
 
 int cycle_length;
