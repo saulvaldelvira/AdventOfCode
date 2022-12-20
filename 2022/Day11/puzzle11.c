@@ -1,5 +1,5 @@
 #define DEBUG 0
-#include "../../include/util.h"
+#include "util.h"
 #include <string.h>
 #include <stdlib.h>
 
