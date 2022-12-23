@@ -119,7 +119,7 @@ void print_waterfall(char waterfall[BUFFER_SIZE][BUFFER_SIZE],int min_y, int y,i
         #elif __linux__
                 system("clear");
         #endif
-        printf("        PART %d\n", part);
+        printf("PART %d\n", part);
 #endif
         for(int i = min_y; i < y; i++){
                 for(int j = min_x; j < x; j++){
@@ -129,9 +129,9 @@ void print_waterfall(char waterfall[BUFFER_SIZE][BUFFER_SIZE],int min_y, int y,i
         }
 #ifdef ANIMATION
         #ifdef _WIN32
-                Sleep(100);
+                Sleep(30);
         #elif __linux__
-                usleep(10000);
+                usleep(30000);
         #endif
 #endif
 }
@@ -234,13 +234,21 @@ int main(){
         bool finish = false; // True if the simulation has ended
         int placed_grains_p1 = 0;
 
+        int animation_upper_y  = 0;
+        int animation_lower_y  = 50;
+        int animation_increment  = 50;
+
         /********PART 1**************
          * Count placed sand grains till one falls behind the lowest rock (aka. the infinite void)
          * ***************************/ 
         while(!finish){
+                if(sand_y == animation_lower_y){
+                        animation_upper_y = animation_lower_y-5;
+                        animation_lower_y += animation_increment-5;
+                }
 #ifdef ANIMATION
                 waterfall[sand_y][sand_x] = '+';
-                print_waterfall(waterfall, sand_y-10 >= 0 ? sand_y-10 : 0, sand_y+30 <= max_y ? sand_y+30 : max_y, min_x-10 , max_x+10, 1);
+                print_waterfall(waterfall, animation_upper_y , animation_lower_y, min_x-10 , max_x+10, 1);
 #endif
                waterfall[sand_y][sand_x] = '.'; 
                 if(waterfall[sand_y+1][sand_x] == '.'){
@@ -286,10 +294,19 @@ int main(){
         finish = false;
         int placed_grains_p2 = 0;
 
+        animation_upper_y  = 0;
+        animation_lower_y  = 50;
+        animation_increment  = 50;
+
+
         while(!finish){
+                if(sand_y == animation_lower_y){
+                        animation_upper_y = animation_lower_y-5;
+                        animation_lower_y += animation_increment-5;
+                }
 #ifdef ANIMATION
                 waterfall[sand_y][sand_x] = '+';
-                print_waterfall(waterfall, sand_y-10 >= 0 ? sand_y-10 : 0, sand_y+30 <= max_y ? sand_y+30 : max_y, min_x-10 , max_x+10, 2);
+                print_waterfall(waterfall, animation_upper_y , animation_lower_y, min_x-10 , max_x+10, 1);
 #endif
                waterfall[sand_y][sand_x] = '.';
                 if(waterfall[sand_y+1][sand_x] == '.'){
