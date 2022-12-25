@@ -150,7 +150,7 @@ int main(){
         for(int i = min_x; i <= max_x; i++){
                aux.x = i;
                for(int j = 0; j < n_lines; j++){
-                        if(distance(aux, array[j].s) <= distance(array[j].b, array[j].s) && distance(aux, array[j].s) != 0 && distance(aux, array[j].b) != 0){
+                        if(distance(aux, array[j].s) <= distance(array[j].b, array[j].s) && distance(aux, array[j].b) != 0){
                                 sum++;
 #if DEBUG
                                 printf("Found a spot --> [%d,%d]\n", aux.x, aux.y);
