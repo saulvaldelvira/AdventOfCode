@@ -181,7 +181,7 @@ int main(){
         *       3) For every point in the perimeter, check if it's outside every sensor's range
         *       4) If we found such beacon, calculate the frequency and break the loop.
         *
-        * I know it's kind ugly to copy paste the same loop 4 times but, it works, and it works REALLY fast so let it slide this time :p
+        * I know it's kind ugly to copy paste the same loop 4 times but, it works, and it works fast so let it slide this time :p
         */
         uint64_t freq = 0;
 #if DEBUG
@@ -205,7 +205,7 @@ int main(){
                                 int covered = 0;
                                 for (int j = 0; j < n_sensors; j++){
                                         if (distance((struct Coordinates){x,y}, array[j].s) <= distance(array[j].b, array[j].s)){
-                                                covered = 1; // if the point is inise at least one sensor's range, mark it as "covered"
+                                                covered = 1; // if the point is inide of at least one sensor's range, mark it as "covered"
                                         }
                                         
                                 }
